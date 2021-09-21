@@ -33,7 +33,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type 'relative)
+(setq display-line-numbers-type 'visual)
 (setq truncate-lines nil)
 (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
 ;;(define-key evil-normal-state-map (kbd "s") 'evil-substitute)
