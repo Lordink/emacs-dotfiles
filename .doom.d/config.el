@@ -19,7 +19,7 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Cascadia Code" :size 14 :weight 'regular))
+(setq doom-font (font-spec :family "Cascadia Code" :size 16 :weight 'regular))
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
@@ -42,6 +42,13 @@
 (setq truncate-lines nil)
 (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
 ;;(define-key evil-normal-state-map (kbd "s") 'evil-substitute)
+;;
+(defun my/org-roam-capture-inbox ()
+  (interactive)
+  (org-roam-capture- :node (org-roam-node-create)
+                     :templates '(("i" "inbox" plain "* %?"
+                                  :if-new (file+head "Inbox.org" "#+title: Inbox\n")))))
+(map! :leader :desc "New inbox entry" "n b" #'my/org-roam-capture-inbox)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
