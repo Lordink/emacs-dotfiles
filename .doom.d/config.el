@@ -32,7 +32,7 @@
 (setq org-directory "F:/Dropbox/Useful/org/")
 (after! org
   (setq org-todo-keywords
-      '((sequence "TODO(t)" "NOW(n)" "|" "DONE(d)")
+      '((sequence "TODO(t)" "OPT(o)" "NOW(n)" "|" "DONE(d)")
         (sequence "BLOCKED(b)" "CHECK(c)" "|" "FAIL(f)")))
   (setq org-startup-folded t))
 
@@ -41,14 +41,29 @@
 (setq display-line-numbers-type 'visual)
 (setq truncate-lines nil)
 (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
-;;(define-key evil-normal-state-map (kbd "s") 'evil-substitute)
-;;
+
 (defun my/org-roam-capture-inbox ()
   (interactive)
   (org-roam-capture- :node (org-roam-node-create)
                      :templates '(("i" "inbox" plain "* %?"
                                   :if-new (file+head "Inbox.org" "#+title: Inbox\n")))))
 (map! :leader :desc "New inbox entry" "n b" #'my/org-roam-capture-inbox)
+
+;; org-roam-ui config:
+(use-package! websocket
+    :after org-roam)
+
+(use-package! org-roam-ui
+    :after org-roam ;; or :after org
+;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
+;;         a hookable mode anymore, you're advised to pick something yourself
+;;         if you don't care about startup time, use
+;;  :hook (after-init . org-roam-ui-mode)
+    :config
+    (setq org-roam-ui-sync-theme t
+          org-roam-ui-follow t
+          org-roam-ui-update-on-save t
+          org-roam-ui-open-on-start t))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;

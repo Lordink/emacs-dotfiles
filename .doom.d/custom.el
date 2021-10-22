@@ -18,6 +18,8 @@
  '(jdee-db-requested-breakpoint-face-colors (cons "#1B2229" "#b6e63e"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#1B2229" "#525254"))
  '(objed-cursor-color "#e74c3c")
+ '(org-agenda-files
+   '("f:/Dropbox/Useful/org/roam/20211018155014-daily.org" "f:/Dropbox/Useful/org/roam/20211018003047-meetings.org" "F:/Dropbox/Useful/org/CC_Leadership_Agenda_111021.org" "F:/Dropbox/Useful/org/birthdays.org" "F:/Dropbox/Useful/org/cooking.org" "F:/Dropbox/Useful/org/lore.org" "F:/Dropbox/Useful/org/main.org" "F:/Dropbox/Useful/org/orion.org"))
  '(pdf-view-midnight-colors (cons "#d6d6d4" "#1c1e1f"))
  '(rustic-ansi-faces
    ["#1c1e1f" "#e74c3c" "#b6e63e" "#e2c770" "#268bd2" "#fb2874" "#66d9ef" "#d6d6d4"])
